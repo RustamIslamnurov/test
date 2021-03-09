@@ -10,4 +10,7 @@ public interface CityService {
     City help();
     List<Integer> many();
     String her();
+    void deleteById(Long id);
+    void saveCity(City city);
+    void delByName(String name);
 }

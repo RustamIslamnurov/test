@@ -38,5 +38,20 @@ public class CityServiceImpl implements CityService {
         return cityRepository.her();
     }
 
+    @Override
+    public void deleteById(Long id) {
+        cityRepository.deleteById(id);
+    }
+
+    @Override
+    public void saveCity(City city) {
+        cityRepository.save(city);
+    }
+
+    @Override
+    public void delByName(String name) {
+        cityRepository.delByName(name);
+    }
+
 
 }

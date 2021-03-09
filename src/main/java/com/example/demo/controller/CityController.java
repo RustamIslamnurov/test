@@ -43,13 +43,18 @@ public class CityController {
         return cityService.her();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping("/add")
     public void add(@RequestBody City city){
-
+        cityService.saveCity(city);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(){
+    @DeleteMapping("/del/{id}")
+    public void delete(@PathVariable Long id){
+        cityService.deleteById(id);
+    }
 
+    @DeleteMapping("/delname/{name}")
+    public void delByName(@PathVariable String name){
+        cityService.delByName(name);
     }
 }
