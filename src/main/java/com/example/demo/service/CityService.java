@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CityService {
     List<City> findAll();
-    List<City> findByName();
+    List<String> findByName();
     City help();
     List<Integer> many();
     String her();

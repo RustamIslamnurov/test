@@ -13,7 +13,7 @@ import java.util.List;
 public interface CityRepository extends JpaRepository<City, Long> {
 
     @Query("select name from cities")
-    List primer();
+    List<String> primer();
 
     @Query ("select population from cities order by population")
     List <Integer> many();
@@ -21,8 +21,7 @@ public interface CityRepository extends JpaRepository<City, Long> {
     @Query("select name from cities where population = 464000 ")
     String her();
 
-    @Query("delete from cities where cities.name=?1")
-    void delByName(String name);
+
 
 
 }

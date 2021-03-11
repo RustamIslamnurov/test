@@ -20,9 +20,7 @@ public class CityController {
     }
 
     @GetMapping("/name")
-    public List findByName() {
-
-        return cityService.findByName();
+    public List<String> findByName() {return cityService.findByName();
     }
 
     @GetMapping("/id")
