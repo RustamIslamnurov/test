@@ -24,7 +24,7 @@ public class CityController {
     }
 
     @GetMapping("/id")
-    public City help() {
+     public City help() {
 
         return cityService.help();
     }

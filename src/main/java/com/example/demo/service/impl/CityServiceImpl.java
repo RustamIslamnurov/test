@@ -36,7 +36,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public City help() {
-        return cityRepository.findById(5L).get();
+        return cityRepository.findById(2L).get();
     }
 
     @Override

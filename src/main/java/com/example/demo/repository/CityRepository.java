@@ -12,13 +12,13 @@ import java.util.List;
 @Repository
 public interface CityRepository extends JpaRepository<City, Long> {
 
-    @Query("select name from cities")
+    @Query("select city.name from City city ")
     List<String> primer();
 
-    @Query ("select population from cities order by population")
+    @Query ("select city.population from City city order by city.population")
     List <Integer> many();
 
-    @Query("select name from cities where population = 464000 ")
+    @Query("select city.name from City city where city.population = 464000 ")
     String her();
 
 

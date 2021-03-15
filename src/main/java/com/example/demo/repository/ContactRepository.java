@@ -10,19 +10,19 @@ import java.util.List;
 
 public interface ContactRepository extends JpaRepository <ContactCity, Long> {
 
-    @Query("select lastName from contact order by lastName")
+    @Query("select con.lastName from ContactCity con order by con.lastName")
     List<String> sortByLastName();
 
-    @Query("select birthDate from contact order by birthDate desc ")
+    @Query("select con.birthDate from ContactCity con order by con.birthDate desc ")
     List<Date> sortByDate();
 
-    @Query("select lastName from contact where lastName like '%v'")
+    @Query("select con.lastName from ContactCity con where con.lastName like '%v'")
     List<String> sortByLetter();
 
-    @Query("select lastName from contact where lastName like 'a_'")
+    @Query("select con.lastName from ContactCity con where con.lastName like 'a_'")
     List<String> sortByLetter1();
 
-    @Query("select lastName from contact where lastName like '%fs%'")
+    @Query("select con.lastName from ContactCity con where con.lastName like '%fs%'")
     List<String> sortByLetter2();
 
 }
