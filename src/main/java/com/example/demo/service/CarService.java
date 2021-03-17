@@ -12,5 +12,5 @@ public interface CarService {
 
     void delById(Long id);
 
-    List<String> findByName();
+    String findByName();
 }

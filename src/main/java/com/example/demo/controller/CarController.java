@@ -1,12 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Car;
+import com.example.demo.model.CarDto;
 import com.example.demo.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class CarController {
@@ -14,6 +15,14 @@ public class CarController {
     @Autowired
     CarService carService;
 
+
+    @GetMapping("/rest")
+    public List<Car> rest() {
+        RestTemplate restTemplate = new RestTemplate();
+        List<Car> result = restTemplate.getForObject("http://localhost:8088/car", List.class);
+        return result;
+    }
+    
     @GetMapping("/car")
     public List<Car> findCar(){
         return carService.findAll();
@@ -30,7 +39,7 @@ public class CarController {
     }
 
     @GetMapping("/carname")
-    public List<String> finbByName(){
+    public String finbByName(){
         return carService.findByName();
 
     }
