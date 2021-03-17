@@ -1,29 +1,37 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @Table(name="a_user")
+@ApiModel(value = "Юзер")
+
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
+    @ApiModelProperty(value = "АЙДИ")
     private Long id;
 
     @Column(name="first_name")
+    @ApiModelProperty(value = "Имя")
     private String first_name;
 
     @Column(name="last_name")
+    @ApiModelProperty(value = "Фамилия")
     private String last_name;
 
 //    @OneToOne(cascade = CascadeType.ALL)
