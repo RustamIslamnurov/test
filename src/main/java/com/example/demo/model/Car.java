@@ -25,6 +25,7 @@ public class Car {
     @Column(name = "nomer")
     private Integer nomer;
 
+
 //    @JsonIgnore
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name="user_id", nullable=false)
