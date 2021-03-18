@@ -17,8 +17,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-
-
     @GetMapping("/users")
     @ApiOperation(value = "Вывести всех юзеров")
     public List<User> findUsers() {return userService.findAll();}

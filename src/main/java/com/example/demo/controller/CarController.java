@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Car;
-import com.example.demo.model.CarDto;
 import com.example.demo.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,7 +22,7 @@ public class CarController {
         List<Car> result = restTemplate.getForObject("http://localhost:8088/car", List.class);
         return result;
     }
-    
+
     @GetMapping("/car")
     public List<Car> findCar(){
         return carService.findAll();
@@ -39,9 +39,11 @@ public class CarController {
     }
 
     @GetMapping("/carname")
-    public String finbByName(){
-        return carService.findByName();
+    public String finbByName(){ return carService.findByName(); }
 
+    @GetMapping
+    public ResponseEntity<Object> allUsers(@RequestParam(name = "id", required = false) Long id) {
+        return ResponseEntity.ok(carService.getCars(id));
     }
 
 }

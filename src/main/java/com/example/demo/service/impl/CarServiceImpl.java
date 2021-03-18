@@ -46,4 +46,15 @@ public class CarServiceImpl implements CarService {
 //                .collect(Collectors.toList());
 
     }
+
+    @Override
+    public Object getCars(Long id) {
+
+        if (id == null) {
+            return carRepo.findAll();
+        } else {
+            return carRepo.findById(id).get();
+
+        }
+    }
 }

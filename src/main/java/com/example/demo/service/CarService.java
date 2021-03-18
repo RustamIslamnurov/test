@@ -13,4 +13,6 @@ public interface CarService {
     void delById(Long id);
 
     String findByName();
+
+    Object getCars(Long id);
 }

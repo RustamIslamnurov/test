@@ -8,7 +8,7 @@ public interface UserService {
 
     List<User> findAll();
 
-    void saveUser(User user);
+    boolean saveUser(User user);
 
     void delById(Long id);
 
